@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Color } from 'src/color.model';
 
 @Component({
   selector: 'app-color-bank',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./color-bank.component.css'],
 })
 export class ColorBankComponent implements OnInit {
-  colors: String[] = [];
+  @Input() colorBank!: Color[];
   constructor() {}
 
   ngOnInit(): void {}

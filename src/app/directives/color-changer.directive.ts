@@ -1,10 +1,12 @@
-import { Directive } from '@angular/core';
+import { Directive, ElementRef, Input, OnInit } from '@angular/core';
 
 @Directive({
-  selector: '[appColorChanger]'
+  selector: '[appColorChanger]',
 })
 export class ColorChangerDirective {
-
-  constructor() { }
-
+  @Input() backgroundColor: string = '';
+  constructor(private elementRef: ElementRef) {}
+  ngOnInit() {
+    this.elementRef.nativeElement.style.backgroundColor = this.backgroundColor;
+  }
 }

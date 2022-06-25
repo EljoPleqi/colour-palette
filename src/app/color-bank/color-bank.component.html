@@ -1,1 +1,16 @@
-<p>color-bank works!</p>
+<div *ngIf="colorBank; else noColours">
+  <div class="colour-palette" *ngFor="let color of colorBank">
+    <div class="color">
+      <div class="color-card">
+        <div
+          class="swatch"
+          appColorChanger
+          [backgroundColor]="color.code"
+        ></div>
+        <p class="code">{{ color.code }}</p>
+      </div>
+      <p>{{ color.name }}</p>
+    </div>
+  </div>
+</div>
+<ng-template #noColours> Please add a colour Palette</ng-template>

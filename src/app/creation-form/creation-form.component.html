@@ -1,1 +1,11 @@
-<p>creation-form works!</p>
+<div class="form">
+  <div class="element">
+    <label for="name">Color Name</label>
+    <input type="text" name="name" #name />
+  </div>
+  <div class="element">
+    <label for="code">Color Code</label>
+    <input type="text" name="code" #code />
+  </div>
+  <button (click)="onCreateNewColour()">Create Swatch</button>
+</div>
